@@ -465,347 +465,347 @@ fn get_primitive2<T>(
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AllOptions {
     #[serde(rename = "allPages")]
-    all_pages: Option<bool>,
+    pub all_pages: Option<bool>,
     #[serde(rename = "help")]
-    help: Option<String>,
+    pub help: Option<String>,
     #[serde(rename = "inputFrom")]
-    input_from: Option<String>,
+    pub input_from: Option<String>,
     #[serde(rename = "logLevel")]
-    log_level: Option<String>,
+    pub log_level: Option<String>,
     #[serde(rename = "outfile")]
-    outfile: Option<String>,
+    pub outfile: Option<String>,
     #[serde(rename = "outputTo")]
-    output_to: Option<String>,
+    pub output_to: Option<String>,
     #[serde(rename = "page")]
-    page: Option<i32>,
+    pub page: Option<i32>,
     #[serde(rename = "resourcePath")]
-    resource_path: Option<String>,
+    pub resource_path: Option<String>,
     #[serde(rename = "scale")]
-    scale: Option<i32>,
+    pub scale: Option<i32>,
     #[serde(rename = "stdin")]
-    stdin: Option<bool>,
+    pub stdin: Option<bool>,
     #[serde(rename = "version")]
-    version: Option<bool>,
+    pub version: Option<bool>,
     #[serde(rename = "xmlIdSeed")]
-    xml_id_seed: Option<i32>,
+    pub xml_id_seed: Option<i32>,
     #[serde(rename = "adjustPageHeight")]
-    adjust_page_height: Option<bool>,
+    pub adjust_page_height: Option<bool>,
     #[serde(rename = "adjustPageWidth")]
-    adjust_page_width: Option<bool>,
+    pub adjust_page_width: Option<bool>,
     #[serde(rename = "breaks")]
-    breaks: Option<String>,
+    pub breaks: Option<String>,
     #[serde(rename = "breaksSmartSb")]
-    breaks_smart_sb: Option<f64>,
+    pub breaks_smart_sb: Option<f64>,
     #[serde(rename = "condense")]
-    condense: Option<String>,
+    pub condense: Option<String>,
     #[serde(rename = "condenseFirstPage")]
-    condense_first_page: Option<bool>,
+    pub condense_first_page: Option<bool>,
     #[serde(rename = "condenseNotLastSystem")]
-    condense_not_last_system: Option<bool>,
+    pub condense_not_last_system: Option<bool>,
     #[serde(rename = "condenseTempoPages")]
-    condense_tempo_pages: Option<bool>,
+    pub condense_tempo_pages: Option<bool>,
     #[serde(rename = "evenNoteSpacing")]
-    even_note_spacing: Option<bool>,
+    pub even_note_spacing: Option<bool>,
     #[serde(rename = "expand")]
-    expand: Option<String>,
+    pub expand: Option<String>,
     #[serde(rename = "footer")]
-    footer: Option<String>,
+    pub footer: Option<String>,
     #[serde(rename = "header")]
-    header: Option<String>,
+    pub header: Option<String>,
     #[serde(rename = "humType")]
-    hum_type: Option<bool>,
+    pub hum_type: Option<bool>,
     #[serde(rename = "incip")]
-    incip: Option<bool>,
+    pub incip: Option<bool>,
     #[serde(rename = "justifyVertically")]
-    justify_vertically: Option<bool>,
+    pub justify_vertically: Option<bool>,
     #[serde(rename = "landscape")]
-    landscape: Option<bool>,
+    pub landscape: Option<bool>,
     #[serde(rename = "minLastJustification")]
-    min_last_justification: Option<f64>,
+    pub min_last_justification: Option<f64>,
     #[serde(rename = "mmOutput")]
-    mm_output: Option<bool>,
+    pub mm_output: Option<bool>,
     #[serde(rename = "moveScoreDefinitionToStaff")]
-    move_score_definition_to_staff: Option<bool>,
+    pub move_score_definition_to_staff: Option<bool>,
     #[serde(rename = "neumeAsNote")]
-    neume_as_note: Option<bool>,
+    pub neume_as_note: Option<bool>,
     #[serde(rename = "noJustification")]
-    no_justification: Option<bool>,
+    pub no_justification: Option<bool>,
     #[serde(rename = "openControlEvents")]
-    open_control_events: Option<bool>,
+    pub open_control_events: Option<bool>,
     #[serde(rename = "outputFormatRaw")]
-    output_format_raw: Option<bool>,
+    pub output_format_raw: Option<bool>,
     #[serde(rename = "outputIndent")]
-    output_indent: Option<i32>,
+    pub output_indent: Option<i32>,
     #[serde(rename = "outputIndentTab")]
-    output_indent_tab: Option<bool>,
+    pub output_indent_tab: Option<bool>,
     #[serde(rename = "outputSmuflXmlEntities")]
-    output_smufl_xml_entities: Option<bool>,
+    pub output_smufl_xml_entities: Option<bool>,
     #[serde(rename = "pageHeight")]
-    page_height: Option<i32>,
+    pub page_height: Option<i32>,
     #[serde(rename = "pageMarginBottom")]
-    page_margin_bottom: Option<i32>,
+    pub page_margin_bottom: Option<i32>,
     #[serde(rename = "pageMarginLeft")]
-    page_margin_left: Option<i32>,
+    pub page_margin_left: Option<i32>,
     #[serde(rename = "pageMarginRight")]
-    page_margin_right: Option<i32>,
+    pub page_margin_right: Option<i32>,
     #[serde(rename = "pageMarginTop")]
-    page_margin_top: Option<i32>,
+    pub page_margin_top: Option<i32>,
     #[serde(rename = "pageWidth")]
-    page_width: Option<i32>,
+    pub page_width: Option<i32>,
     #[serde(rename = "pedalStyle")]
-    pedal_style: Option<String>,
+    pub pedal_style: Option<String>,
     #[serde(rename = "preserveAnalyticalMarkup")]
-    preserve_analytical_markup: Option<bool>,
+    pub preserve_analytical_markup: Option<bool>,
     #[serde(rename = "removeIds")]
-    remove_ids: Option<bool>,
+    pub remove_ids: Option<bool>,
     #[serde(rename = "scaleToPageSize")]
-    scale_to_page_size: Option<bool>,
+    pub scale_to_page_size: Option<bool>,
     #[serde(rename = "setLocale")]
-    set_locale: Option<bool>,
+    pub set_locale: Option<bool>,
     #[serde(rename = "showRuntime")]
-    show_runtime: Option<bool>,
+    pub show_runtime: Option<bool>,
     #[serde(rename = "shrinkToFit")]
-    shrink_to_fit: Option<bool>,
+    pub shrink_to_fit: Option<bool>,
     #[serde(rename = "smuflTextFont")]
-    smufl_text_font: Option<String>,
+    pub smufl_text_font: Option<String>,
     #[serde(rename = "staccatoCenter")]
-    staccato_center: Option<bool>,
+    pub staccato_center: Option<bool>,
     #[serde(rename = "svgAdditionalAttribute")]
-    svg_additional_attribute: Option<Vec<String>>,
+    pub svg_additional_attribute: Option<Vec<String>>,
     #[serde(rename = "svgBoundingBoxes")]
-    svg_bounding_boxes: Option<bool>,
+    pub svg_bounding_boxes: Option<bool>,
     #[serde(rename = "svgCss")]
-    svg_css: Option<String>,
+    pub svg_css: Option<String>,
     #[serde(rename = "svgFormatRaw")]
-    svg_format_raw: Option<bool>,
+    pub svg_format_raw: Option<bool>,
     #[serde(rename = "svgHtml5")]
-    svg_html5: Option<bool>,
+    pub svg_html5: Option<bool>,
     #[serde(rename = "svgRemoveXlink")]
-    svg_remove_xlink: Option<bool>,
+    pub svg_remove_xlink: Option<bool>,
     #[serde(rename = "svgViewBox")]
-    svg_view_box: Option<bool>,
+    pub svg_view_box: Option<bool>,
     #[serde(rename = "unit")]
-    unit: Option<f64>,
+    pub unit: Option<f64>,
     #[serde(rename = "useBraceGlyph")]
-    use_brace_glyph: Option<bool>,
+    pub use_brace_glyph: Option<bool>,
     #[serde(rename = "useFacsimile")]
-    use_facsimile: Option<bool>,
+    pub use_facsimile: Option<bool>,
     #[serde(rename = "usePgFooterForAll")]
-    use_pg_footer_for_all: Option<bool>,
+    pub use_pg_footer_for_all: Option<bool>,
     #[serde(rename = "usePgHeaderForAll")]
-    use_pg_header_for_all: Option<bool>,
+    pub use_pg_header_for_all: Option<bool>,
     #[serde(rename = "xmlIdChecksum")]
-    xml_id_checksum: Option<bool>,
+    pub xml_id_checksum: Option<bool>,
     #[serde(rename = "barLineSeparation")]
-    bar_line_separation: Option<f64>,
+    pub bar_line_separation: Option<f64>,
     #[serde(rename = "barLineWidth")]
-    bar_line_width: Option<f64>,
+    pub bar_line_width: Option<f64>,
     #[serde(rename = "beamFrenchStyle")]
-    beam_french_style: Option<bool>,
+    pub beam_french_style: Option<bool>,
     #[serde(rename = "beamMaxSlope")]
-    beam_max_slope: Option<i32>,
+    pub beam_max_slope: Option<i32>,
     #[serde(rename = "beamMixedPreserve")]
-    beam_mixed_preserve: Option<bool>,
+    pub beam_mixed_preserve: Option<bool>,
     #[serde(rename = "beamMixedStemMin")]
-    beam_mixed_stem_min: Option<f64>,
+    pub beam_mixed_stem_min: Option<f64>,
     #[serde(rename = "bracketThickness")]
-    bracket_thickness: Option<f64>,
+    pub bracket_thickness: Option<f64>,
     #[serde(rename = "breaksNoWidow")]
-    breaks_no_widow: Option<bool>,
+    pub breaks_no_widow: Option<bool>,
     #[serde(rename = "dashedBarLineDashLength")]
-    dashed_bar_line_dash_length: Option<f64>,
+    pub dashed_bar_line_dash_length: Option<f64>,
     #[serde(rename = "dashedBarLineGapLength")]
-    dashed_bar_line_gap_length: Option<f64>,
+    pub dashed_bar_line_gap_length: Option<f64>,
     #[serde(rename = "dynamDist")]
-    dynam_dist: Option<f64>,
+    pub dynam_dist: Option<f64>,
     #[serde(rename = "dynamSingleGlyphs")]
-    dynam_single_glyphs: Option<bool>,
+    pub dynam_single_glyphs: Option<bool>,
     #[serde(rename = "extenderLineMinSpace")]
-    extender_line_min_space: Option<f64>,
+    pub extender_line_min_space: Option<f64>,
     #[serde(rename = "fingeringScale")]
-    fingering_scale: Option<f64>,
+    pub fingering_scale: Option<f64>,
     #[serde(rename = "font")]
-    font: Option<String>,
+    pub font: Option<String>,
     #[serde(rename = "fontAddCustom")]
-    font_add_custom: Option<Vec<String>>,
+    pub font_add_custom: Option<Vec<String>>,
     #[serde(rename = "fontFallback")]
-    font_fallback: Option<String>,
+    pub font_fallback: Option<String>,
     #[serde(rename = "fontLoadAll")]
-    font_load_all: Option<bool>,
+    pub font_load_all: Option<bool>,
     #[serde(rename = "graceFactor")]
-    grace_factor: Option<f64>,
+    pub grace_factor: Option<f64>,
     #[serde(rename = "graceRhythmAlign")]
-    grace_rhythm_align: Option<bool>,
+    pub grace_rhythm_align: Option<bool>,
     #[serde(rename = "graceRightAlign")]
-    grace_right_align: Option<bool>,
+    pub grace_right_align: Option<bool>,
     #[serde(rename = "hairpinSize")]
-    hairpin_size: Option<f64>,
+    pub hairpin_size: Option<f64>,
     #[serde(rename = "hairpinThickness")]
-    hairpin_thickness: Option<f64>,
+    pub hairpin_thickness: Option<f64>,
     #[serde(rename = "handwrittenFont")]
-    handwritten_font: Option<Vec<String>>,
+    pub handwritten_font: Option<Vec<String>>,
     #[serde(rename = "harmDist")]
-    harm_dist: Option<f64>,
+    pub harm_dist: Option<f64>,
     #[serde(rename = "justificationBraceGroup")]
-    justification_brace_group: Option<f64>,
+    pub justification_brace_group: Option<f64>,
     #[serde(rename = "justificationBracketGroup")]
-    justification_bracket_group: Option<f64>,
+    pub justification_bracket_group: Option<f64>,
     #[serde(rename = "justificationMaxVertical")]
-    justification_max_vertical: Option<f64>,
+    pub justification_max_vertical: Option<f64>,
     #[serde(rename = "justificationStaff")]
-    justification_staff: Option<f64>,
+    pub justification_staff: Option<f64>,
     #[serde(rename = "justificationSystem")]
-    justification_system: Option<f64>,
+    pub justification_system: Option<f64>,
     #[serde(rename = "ledgerLineExtension")]
-    ledger_line_extension: Option<f64>,
+    pub ledger_line_extension: Option<f64>,
     #[serde(rename = "ledgerLineThickness")]
-    ledger_line_thickness: Option<f64>,
+    pub ledger_line_thickness: Option<f64>,
     #[serde(rename = "lyricElision")]
-    lyric_elision: Option<String>,
+    pub lyric_elision: Option<String>,
     #[serde(rename = "lyricHeightFactor")]
-    lyric_height_factor: Option<f64>,
+    pub lyric_height_factor: Option<f64>,
     #[serde(rename = "lyricLineThickness")]
-    lyric_line_thickness: Option<f64>,
+    pub lyric_line_thickness: Option<f64>,
     #[serde(rename = "lyricNoStartHyphen")]
-    lyric_no_start_hyphen: Option<bool>,
+    pub lyric_no_start_hyphen: Option<bool>,
     #[serde(rename = "lyricSize")]
-    lyric_size: Option<f64>,
+    pub lyric_size: Option<f64>,
     #[serde(rename = "lyricTopMinMargin")]
-    lyric_top_min_margin: Option<f64>,
+    pub lyric_top_min_margin: Option<f64>,
     #[serde(rename = "lyricVerseCollapse")]
-    lyric_verse_collapse: Option<bool>,
+    pub lyric_verse_collapse: Option<bool>,
     #[serde(rename = "lyricWordSpace")]
-    lyric_word_space: Option<f64>,
+    pub lyric_word_space: Option<f64>,
     #[serde(rename = "measureMinWidth")]
-    measure_min_width: Option<i32>,
+    pub measure_min_width: Option<i32>,
     #[serde(rename = "mnumInterval")]
-    mnum_interval: Option<i32>,
+    pub mnum_interval: Option<i32>,
     #[serde(rename = "multiRestStyle")]
-    multi_rest_style: Option<String>,
+    pub multi_rest_style: Option<String>,
     #[serde(rename = "multiRestThickness")]
-    multi_rest_thickness: Option<f64>,
+    pub multi_rest_thickness: Option<f64>,
     #[serde(rename = "octaveAlternativeSymbols")]
-    octave_alternative_symbols: Option<bool>,
+    pub octave_alternative_symbols: Option<bool>,
     #[serde(rename = "octaveLineThickness")]
-    octave_line_thickness: Option<f64>,
+    pub octave_line_thickness: Option<f64>,
     #[serde(rename = "octaveNoSpanningParentheses")]
-    octave_no_spanning_parentheses: Option<bool>,
+    pub octave_no_spanning_parentheses: Option<bool>,
     #[serde(rename = "pedalLineThickness")]
-    pedal_line_thickness: Option<f64>,
+    pub pedal_line_thickness: Option<f64>,
     #[serde(rename = "repeatBarLineDotSeparation")]
-    repeat_bar_line_dot_separation: Option<f64>,
+    pub repeat_bar_line_dot_separation: Option<f64>,
     #[serde(rename = "repeatEndingLineThickness")]
-    repeat_ending_line_thickness: Option<f64>,
+    pub repeat_ending_line_thickness: Option<f64>,
     #[serde(rename = "slurCurveFactor")]
-    slur_curve_factor: Option<f64>,
+    pub slur_curve_factor: Option<f64>,
     #[serde(rename = "slurEndpointFlexibility")]
-    slur_endpoint_flexibility: Option<f64>,
+    pub slur_endpoint_flexibility: Option<f64>,
     #[serde(rename = "slurEndpointThickness")]
-    slur_endpoint_thickness: Option<f64>,
+    pub slur_endpoint_thickness: Option<f64>,
     #[serde(rename = "slurMargin")]
-    slur_margin: Option<f64>,
+    pub slur_margin: Option<f64>,
     #[serde(rename = "slurMaxSlope")]
-    slur_max_slope: Option<i32>,
+    pub slur_max_slope: Option<i32>,
     #[serde(rename = "slurMidpointThickness")]
-    slur_midpoint_thickness: Option<f64>,
+    pub slur_midpoint_thickness: Option<f64>,
     #[serde(rename = "slurSymmetry")]
-    slur_symmetry: Option<f64>,
+    pub slur_symmetry: Option<f64>,
     #[serde(rename = "spacingBraceGroup")]
-    spacing_brace_group: Option<i32>,
+    pub spacing_brace_group: Option<i32>,
     #[serde(rename = "spacingBracketGroup")]
-    spacing_bracket_group: Option<i32>,
+    pub spacing_bracket_group: Option<i32>,
     #[serde(rename = "spacingDurDetection")]
-    spacing_dur_detection: Option<bool>,
+    pub spacing_dur_detection: Option<bool>,
     #[serde(rename = "spacingLinear")]
-    spacing_linear: Option<f64>,
+    pub spacing_linear: Option<f64>,
     #[serde(rename = "spacingNonLinear")]
-    spacing_non_linear: Option<f64>,
+    pub spacing_non_linear: Option<f64>,
     #[serde(rename = "spacingStaff")]
-    spacing_staff: Option<i32>,
+    pub spacing_staff: Option<i32>,
     #[serde(rename = "spacingSystem")]
-    spacing_system: Option<i32>,
+    pub spacing_system: Option<i32>,
     #[serde(rename = "staffLineWidth")]
-    staff_line_width: Option<f64>,
+    pub staff_line_width: Option<f64>,
     #[serde(rename = "stemWidth")]
-    stem_width: Option<f64>,
+    pub stem_width: Option<f64>,
     #[serde(rename = "subBracketThickness")]
-    sub_bracket_thickness: Option<f64>,
+    pub sub_bracket_thickness: Option<f64>,
     #[serde(rename = "systemDivider")]
-    system_divider: Option<String>,
+    pub system_divider: Option<String>,
     #[serde(rename = "systemMaxPerPage")]
-    system_max_per_page: Option<i32>,
+    pub system_max_per_page: Option<i32>,
     #[serde(rename = "textEnclosureThickness")]
-    text_enclosure_thickness: Option<f64>,
+    pub text_enclosure_thickness: Option<f64>,
     #[serde(rename = "thickBarlineThickness")]
-    thick_barline_thickness: Option<f64>,
+    pub thick_barline_thickness: Option<f64>,
     #[serde(rename = "tieEndpointThickness")]
-    tie_endpoint_thickness: Option<f64>,
+    pub tie_endpoint_thickness: Option<f64>,
     #[serde(rename = "tieMidpointThickness")]
-    tie_midpoint_thickness: Option<f64>,
+    pub tie_midpoint_thickness: Option<f64>,
     #[serde(rename = "tieMinLength")]
-    tie_min_length: Option<f64>,
+    pub tie_min_length: Option<f64>,
     #[serde(rename = "tupletAngledOnBeams")]
-    tuplet_angled_on_beams: Option<bool>,
+    pub tuplet_angled_on_beams: Option<bool>,
     #[serde(rename = "tupletBracketThickness")]
-    tuplet_bracket_thickness: Option<f64>,
+    pub tuplet_bracket_thickness: Option<f64>,
     #[serde(rename = "tupletNumHead")]
-    tuplet_num_head: Option<bool>,
+    pub tuplet_num_head: Option<bool>,
     #[serde(rename = "appXPathQuery")]
-    app_xpath_query: Option<Vec<String>>,
+    pub app_xpath_query: Option<Vec<String>>,
     #[serde(rename = "choiceXPathQuery")]
-    choice_xpath_query: Option<Vec<String>>,
+    pub choice_xpath_query: Option<Vec<String>>,
     #[serde(rename = "loadSelectedMdivOnly")]
-    load_selected_mdiv_only: Option<bool>,
+    pub load_selected_mdiv_only: Option<bool>,
     #[serde(rename = "mdivAll")]
-    mdiv_all: Option<bool>,
+    pub mdiv_all: Option<bool>,
     #[serde(rename = "mdivXPathQuery")]
-    mdiv_xpath_query: Option<String>,
+    pub mdiv_xpath_query: Option<String>,
     #[serde(rename = "substXPathQuery")]
-    subst_xpath_query: Option<Vec<String>>,
+    pub subst_xpath_query: Option<Vec<String>>,
     #[serde(rename = "transpose")]
-    transpose: Option<String>,
+    pub transpose: Option<String>,
     #[serde(rename = "transposeMdiv")]
-    transpose_mdiv: Option<String>,
+    pub transpose_mdiv: Option<String>,
     #[serde(rename = "transposeSelectedOnly")]
-    transpose_selected_only: Option<bool>,
+    pub transpose_selected_only: Option<bool>,
     #[serde(rename = "transposeToSoundingPitch")]
-    transpose_to_sounding_pitch: Option<bool>,
+    pub transpose_to_sounding_pitch: Option<bool>,
     #[serde(rename = "bottomMarginArtic")]
-    bottom_margin_artic: Option<f64>,
+    pub bottom_margin_artic: Option<f64>,
     #[serde(rename = "bottomMarginHarm")]
-    bottom_margin_harm: Option<f64>,
+    pub bottom_margin_harm: Option<f64>,
     #[serde(rename = "bottomMarginHeader")]
-    bottom_margin_header: Option<f64>,
+    pub bottom_margin_header: Option<f64>,
     #[serde(rename = "bottomMarginOctave")]
-    bottom_margin_octave: Option<f64>,
+    pub bottom_margin_octave: Option<f64>,
     #[serde(rename = "defaultBottomMargin")]
-    default_bottom_margin: Option<f64>,
+    pub default_bottom_margin: Option<f64>,
     #[serde(rename = "defaultLeftMargin")]
-    default_left_margin: Option<f64>,
+    pub default_left_margin: Option<f64>,
     #[serde(rename = "defaultRightMargin")]
-    default_right_margin: Option<f64>,
+    pub default_right_margin: Option<f64>,
     #[serde(rename = "defaultTopMargin")]
-    default_top_margin: Option<f64>,
+    pub default_top_margin: Option<f64>,
     #[serde(rename = "leftMarginAccid")]
-    left_margin_accid: Option<f64>,
+    pub left_margin_accid: Option<f64>,
     #[serde(rename = "leftMarginBarLine")]
-    left_margin_bar_line: Option<f64>,
+    pub left_margin_bar_line: Option<f64>,
     #[serde(rename = "leftMarginBeatRpt")]
-    left_margin_beat_rpt: Option<f64>,
+    pub left_margin_beat_rpt: Option<f64>,
     #[serde(rename = "leftMarginChord")]
-    left_margin_chord: Option<f64>,
+    pub left_margin_chord: Option<f64>,
     #[serde(rename = "leftMarginClef")]
-    left_margin_clef: Option<f64>,
+    pub left_margin_clef: Option<f64>,
     #[serde(rename = "leftMarginKeySig")]
-    left_margin_key_sig: Option<f64>,
+    pub left_margin_key_sig: Option<f64>,
     #[serde(rename = "leftMarginLeftBarLine")]
-    left_margin_left_bar_line: Option<f64>,
+    pub left_margin_left_bar_line: Option<f64>,
     #[serde(rename = "leftMarginMRest")]
-    left_margin_m_rest: Option<f64>,
+    pub left_margin_m_rest: Option<f64>,
     #[serde(rename = "leftMarginMRpt2")]
-    left_margin_m_rpt2: Option<f64>,
+    pub left_margin_m_rpt2: Option<f64>,
     #[serde(rename = "leftMarginMensur")]
-    left_margin_mensur: Option<f64>,
+    pub left_margin_mensur: Option<f64>,
     #[serde(rename = "leftMarginMeterSig")]
-    left_margin_meter_sig: Option<f64>,
+    pub left_margin_meter_sig: Option<f64>,
 }
