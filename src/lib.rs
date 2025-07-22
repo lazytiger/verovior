@@ -315,8 +315,8 @@ impl VerovioToolkit {
         get_primitive2(self.tk_ptr, input, bindings::vrvToolkit_setInputFrom)
     }
 
-    pub fn set_options(&self, options: impl AsRef<AllOptions>) -> anyhow::Result<bool> {
-        let options = serde_json::to_string(options.as_ref())?;
+    pub fn set_options(&self, options: &AllOptions) -> anyhow::Result<bool> {
+        let options = serde_json::to_string(options)?;
         get_primitive2(self.tk_ptr, &options, bindings::vrvToolkit_setOptions)
     }
 
@@ -464,28 +464,12 @@ fn get_primitive2<T>(
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AllOptions {
-    #[serde(rename = "allPages")]
-    pub all_pages: Option<bool>,
-    #[serde(rename = "help")]
-    pub help: Option<String>,
     #[serde(rename = "inputFrom")]
     pub input_from: Option<String>,
-    #[serde(rename = "logLevel")]
-    pub log_level: Option<String>,
-    #[serde(rename = "outfile")]
-    pub outfile: Option<String>,
     #[serde(rename = "outputTo")]
     pub output_to: Option<String>,
-    #[serde(rename = "page")]
-    pub page: Option<i32>,
-    #[serde(rename = "resourcePath")]
-    pub resource_path: Option<String>,
     #[serde(rename = "scale")]
     pub scale: Option<i32>,
-    #[serde(rename = "stdin")]
-    pub stdin: Option<bool>,
-    #[serde(rename = "version")]
-    pub version: Option<bool>,
     #[serde(rename = "xmlIdSeed")]
     pub xml_id_seed: Option<i32>,
     #[serde(rename = "adjustPageHeight")]
@@ -765,7 +749,7 @@ pub struct AllOptions {
     #[serde(rename = "transpose")]
     pub transpose: Option<String>,
     #[serde(rename = "transposeMdiv")]
-    pub transpose_mdiv: Option<String>,
+    pub transpose_mdiv: Option<TransposeMDiv>,
     #[serde(rename = "transposeSelectedOnly")]
     pub transpose_selected_only: Option<bool>,
     #[serde(rename = "transposeToSoundingPitch")]
@@ -809,3 +793,6 @@ pub struct AllOptions {
     #[serde(rename = "leftMarginMeterSig")]
     pub left_margin_meter_sig: Option<f64>,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct TransposeMDiv {}
