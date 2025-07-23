@@ -21,13 +21,16 @@ fn main() {
     }
     if target.contains("android") {
         let ndk_root = env::var("ANDROID_NDK_HOME").expect("ANDROID_NDK_HOME");
-        config.define(
-            "CMAKE_TOOLCHAIN_FILE",
-            format!("{}/build/cmake/android.toolchain.cmake", ndk_root),
-        );
-        config.define("BUILD_AS_ANDROID_LIBRARY", "ON");
-        config.define("ANDROID_PLATFORM", "android-29");
-        config.define("ANDROID_ABI", "x86_64");
+        config
+            .define(
+                "CMAKE_TOOLCHAIN_FILE",
+                format!("{}/build/cmake/android.toolchain.cmake", ndk_root),
+            )
+            .define("BUILD_AS_ANDROID_LIBRARY", "ON")
+            .define("ANDROID_PLATFORM", "android-21")
+            .define("ANDROID_STL", "c++_static");
+        println!("cargo:rustc-link-lib=c++_static");
+        println!("cargo:rustc-link-lib=c++abi");
     } else {
         config.define("BUILD_AS_LIBRARY", "ON");
     }
