@@ -3,16 +3,33 @@ use std::path::PathBuf;
 
 fn main() {
     let mut config = cmake::Config::new("verovio/cmake");
+    let target = env::var("TARGET").expect("TARGET");
     config
         .define("CMAKE_BUILD_TYPE", "Release")
         .define("BUILD_SHARED_LIBS", "OFF")
-        .define("BUILD_AS_LIBRARY", "ON");
-    #[cfg(target_os = "windows")]
-    {
+        .define("NO_EDIT_SUPPORT", "ON")
+        .define("NO_PAE_SUPPORT", "ON")
+        .define("NO_HUMDRUM_SUPPORT", "ON")
+        .define("NO_ABC_SUPPORT", "ON");
+    if target.contains("windows") {
         config
             .define("CMAKE_CXX_FLAGS", "/utf-8 /MP")
             .define("CMAKE_C_FLAGS", "/utf-8 /MP")
             .define("CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS", "TRUE");
+    } else {
+        config.generator("Ninja");
+    }
+    if target.contains("android") {
+        let ndk_root = env::var("ANDROID_NDK_HOME").expect("ANDROID_NDK_HOME");
+        config.define(
+            "CMAKE_TOOLCHAIN_FILE",
+            format!("{}/build/cmake/android.toolchain.cmake", ndk_root),
+        );
+        config.define("BUILD_AS_ANDROID_LIBRARY", "ON");
+        config.define("ANDROID_PLATFORM", "android-29");
+        config.define("ANDROID_ABI", "x86_64");
+    } else {
+        config.define("BUILD_AS_LIBRARY", "ON");
     }
     let dst = config.build();
 

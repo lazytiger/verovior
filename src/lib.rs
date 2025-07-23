@@ -23,12 +23,15 @@ impl Drop for VerovioToolkit {
 }
 
 impl VerovioToolkit {
+    /// Create a new VerovioToolkit instance.
+    /// This function will log some errors, if the default resource path is not found.
     pub fn new() -> VerovioToolkit {
         VerovioToolkit {
             tk_ptr: unsafe { bindings::vrvToolkit_constructor() },
         }
     }
 
+    /// Create a new VerovioToolkit instance with a custom resource path.
     pub fn with_resource(path: impl AsRef<Path>) -> anyhow::Result<VerovioToolkit> {
         let path = path.as_ref().as_os_str().as_encoded_bytes();
         let path = CString::new(path)?;
@@ -37,12 +40,15 @@ impl VerovioToolkit {
         })
     }
 
+    /// Enable or disable logging.
     pub fn enable_log(enable: bool) {
         unsafe {
             bindings::enableLog(enable);
         }
     }
 
+    /// Enable or disable logging to buffer.
+    /// You can get the log buffer with [`VerovioToolkit::get_log`].
     pub fn enable_log_to_buffer(enable: bool) {
         unsafe {
             bindings::enableLogToBuffer(enable);
@@ -53,6 +59,7 @@ impl VerovioToolkit {
         get_primitive2(self.tk_ptr, action, bindings::vrvToolkit_edit)
     }
 
+    /// Get the edit info.
     pub fn edit_info(&self) -> String {
         get_string(self.tk_ptr, bindings::vrvToolkit_editInfo)
     }
@@ -89,10 +96,12 @@ impl VerovioToolkit {
         get_primitive2(self.tk_ptr, p, bindings::vrvToolkit_getHumdrumFile)
     }
 
-    pub fn get_elements_at_time(&self, p: i32) -> String {
+    pub fn get_elements_at_time(&self, p: i32) -> anyhow::Result<Elements> {
         unsafe {
             let ret = bindings::vrvToolkit_getElementsAtTime(self.tk_ptr, p);
-            CStr::from_ptr(ret).to_string_lossy().into_owned()
+            let s = CStr::from_ptr(ret).to_string_lossy();
+            let ret = serde_json::from_str(&s)?;
+            Ok(ret)
         }
     }
 
@@ -256,18 +265,31 @@ impl VerovioToolkit {
         }
     }
 
-    pub fn render_to_timemap(&self, options: impl AsRef<str>) -> anyhow::Result<String> {
-        get_string2(self.tk_ptr, options, bindings::vrvToolkit_renderToTimemap)
+    pub fn render_to_timemap(
+        &self,
+        options: Option<&TimemapRenderOptions>,
+    ) -> anyhow::Result<String> {
+        let options = if let Some(options) = options {
+            serde_json::to_string(options)?
+        } else {
+            "".into()
+        };
+        get_string2(self.tk_ptr, &options, bindings::vrvToolkit_renderToTimemap)
     }
 
     pub fn render_to_timemap_file(
         &self,
         path: impl AsRef<Path>,
-        options: impl AsRef<str>,
+        options: Option<&TimemapRenderOptions>,
     ) -> anyhow::Result<bool> {
         let path = path.as_ref().as_os_str().as_encoded_bytes();
         let path = CString::new(path)?;
-        let options = CString::new(options.as_ref())?;
+        let options = if let Some(options) = options {
+            serde_json::to_vec(options)?
+        } else {
+            vec![]
+        };
+        let options = CString::new(options)?;
         unsafe {
             Ok(bindings::vrvToolkit_renderToTimemapFile(
                 self.tk_ptr,
@@ -462,7 +484,7 @@ fn get_primitive2<T>(
     }
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Default)]
 pub struct AllOptions {
     #[serde(rename = "inputFrom")]
     pub input_from: Option<String>,
@@ -794,5 +816,26 @@ pub struct AllOptions {
     pub left_margin_meter_sig: Option<f64>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Default)]
 pub struct TransposeMDiv {}
+
+#[derive(Debug, Serialize, Deserialize, Default)]
+pub struct Elements {
+    pub chords: Vec<String>,
+    pub measure: String,
+    pub notes: Vec<String>,
+    pub page: u32,
+    pub rests: Vec<String>,
+}
+
+#[derive(Debug, Serialize, Deserialize, Default)]
+pub struct TimemapRenderOptions {
+    #[serde(rename = "includeMeasures")]
+    pub include_measures: bool,
+
+    #[serde(rename = "includeRests")]
+    pub include_rests: bool,
+
+    #[serde(rename = "useFractions")]
+    pub use_fractions: bool,
+}
